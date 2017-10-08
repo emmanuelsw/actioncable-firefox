@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<%= render 'form', product: @product %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+
+  <tbody id="products-table">
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
